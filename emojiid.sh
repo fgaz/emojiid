@@ -3,6 +3,8 @@
 # EmojiId v0.1.0.0
 #
 # Deterministically assign an emoji to a user/machine pair.
+
+# Stop wasting space for that hostname!
 #
 # (C) 2017 Francesco Gazzetta
 # released under MIT license
@@ -11,13 +13,16 @@
 # you can use it for example in your bashrc to change your prompt
 # like this
 #
-# PS1="\u@$(source ~/path/to/emojiid.sh) \W \$ "
+# emojiid="$(source ~/path/to/emojiid.sh)"
+# PS1="\u@${emojiid} \W \$ "
 #
 # or even
 #
-# PS1="$(source ~/path/to/emojiid.sh) \W \$ " 
+# PS1="${emojiid} \W \$ "
 #
-# Stop wasting space for that hostname!
+# (I didn't put the emojiid.sh evaluation inside PS1
+# because PS1 is executed at every line, and that would
+# be inefficient (md5, conversion, modulus...))
 
 # Configuration:
 # you can change the randomnessource and emojisample variables
@@ -28,7 +33,7 @@
 # or $(cat /var/lib/dbus/machine-id).
 # Remove $(whoami) if you don't want the emoji to change
 # depending on the user
-randomnesssource="a$(whoami)@$(hostname)"
+randomnesssource="$(whoami)@$(hostname)"
 
 smileys=(
 😀 😃 😄 😁 😆 😅 😂 🤣 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 😘 😗 😙 😚 😋 😜 😝 😛 🤑 🤗 🤓 😎 🤡 🤠 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 😤 😠 😡 😶 😐 😑 😯 😦 😧 😮 😲 😵 😳 😱 😨 😰 😢 😥 🤤 😭 😓 😪 😴 🙄 🤔 🤥 😬 🤐 🤢 🤧 😷 🤒 🤕 😈 👿 👹 👺 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾 👐 🙌 👏 🙏 🤝 👍 👎 👊 ✊ 🤛 🤜 🤞 ✌️ 🤘 👌 👈 👉 👆 👇 ☝️ ✋ 🤚 🖐 🖖 👋 🤙 💪 🖕 ✍️ 🤳 💅 🖖 💄 💋 👄 👅 👂 👃 👣 👁 👀 🗣 👤 👥

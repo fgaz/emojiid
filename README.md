@@ -11,11 +11,20 @@ Deterministically assign an emoji to a user/machine pair.
 You can use it for example in your bashrc to change your prompt
 like this
 
-    PS1="\u@$(source ~/path/to/emojiid.sh) \W \$ "
+```bash
+emojiid="$(source ~/path/to/emojiid.sh)"
+PS1="\u@${emojiid} \W \$ "
+```
 
 or even
 
-    PS1="$(source ~/path/to/emojiid.sh) \W \$ " 
+```bash
+PS1="${emojiid} \W \$ "
+```
+
+(I didn't put the emojiid.sh evaluation inside PS1
+because PS1 is executed at every line, and that would
+be inefficient (md5, conversion, modulus...))
 
 ## Configuration
 
