@@ -4,6 +4,8 @@ Deterministically assign an emoji to a user/machine pair.
 
 **Stop wasting that space on $PS1!**
 
+![screenshot](screenshot.png)
+
 ## Usage
 
 You can use it for example in your bashrc to change your prompt
