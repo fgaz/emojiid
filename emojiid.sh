@@ -28,7 +28,7 @@
 # or $(cat /var/lib/dbus/machine-id).
 # Remove $(whoami) if you don't want the emoji to change
 # depending on the user
-randomnesssource="$(whoami)@$(hostname)"
+randomnesssource="a$(whoami)@$(hostname)"
 
 smileys=(
 😀 😃 😄 😁 😆 😅 😂 🤣 ☺️ 😊 😇 🙂 🙃 😉 😌 😍 😘 😗 😙 😚 😋 😜 😝 😛 🤑 🤗 🤓 😎 🤡 🤠 😏 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 😤 😠 😡 😶 😐 😑 😯 😦 😧 😮 😲 😵 😳 😱 😨 😰 😢 😥 🤤 😭 😓 😪 😴 🙄 🤔 🤥 😬 🤐 🤢 🤧 😷 🤒 🤕 😈 👿 👹 👺 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾 👐 🙌 👏 🙏 🤝 👍 👎 👊 ✊ 🤛 🤜 🤞 ✌️ 🤘 👌 👈 👉 👆 👇 ☝️ ✋ 🤚 🖐 🖖 👋 🤙 💪 🖕 ✍️ 🤳 💅 🖖 💄 💋 👄 👅 👂 👃 👣 👁 👀 🗣 👤 👥
@@ -76,8 +76,8 @@ emojisample=("${noligatures[@]}")
 #######
 
 length=${#emojisample[@]}
-hash=$(echo "${randomnesssource}" | md5sum | awk '{ print toupper($1) }')
-rand=$(echo "ibase=16; ${hash}"| bc)
+myhash=$(echo "${randomnesssource}" | md5sum | awk '{ print toupper($1) }')
+rand=$(echo "ibase=16; ${myhash}"| bc)
 index=$(($rand % $length))
 emoji=${emojisample[$index]}
 
