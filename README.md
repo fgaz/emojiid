@@ -30,3 +30,18 @@ be inefficient (md5, conversion, modulus...))
 
 You can change the randomnessource and emojisample variables
 
+## Terminal emulator support
+
+Some terminal emulators fail to display the emoji in its full width
+(usually between 1 and 2 characters), sometimes causing weird
+behaviour, such as characters disappearing and misaligning or
+the emoji being cut off.
+
+Let me know if you test it on a termina emulator
+that is not listed here!
+
+<!-- TODO check how to display a table -->
+
+* sakura: issues with alignment
+* lxterminal: works
+
