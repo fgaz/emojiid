@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# EmojiId v0.1.0.0
+# EmojiId v0.2.0.0
 #
 # Deterministically assign an emoji to a user/machine pair.
 
