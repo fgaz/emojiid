@@ -44,4 +44,5 @@ that is not listed here!
 
 * sakura: issues with alignment
 * lxterminal: works
+* lilyterm: works
 
