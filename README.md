@@ -40,9 +40,9 @@ the emoji being cut off.
 Let me know if you test it on a termina emulator
 that is not listed here!
 
-<!-- TODO check how to display a table -->
-
-* sakura: issues with alignment
-* lxterminal: works
-* lilyterm: works
+| Terminal emulator | Support |
+|-------------------|---------|
+| sakura | issues with alignment |
+| lxterminal | works |
+| lilyterm | works |
 
